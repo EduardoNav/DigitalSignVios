@@ -2,8 +2,8 @@
 //  FirmaModalVC.swift
 //  FirmadoMovil
 //
-//  Created by Consorcio 5 on 12/07/18.
-//  Copyright © 2018 Jorge Rivera. All rights reserved.
+//  Created by Luis Eduardo Moreno Nava on 12/07/18.
+//  Copyright © 2018 Luis Eduardo Moreno Nava. All rights reserved.
 //
 
 import UIKit
