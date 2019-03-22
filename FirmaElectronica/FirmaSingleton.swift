@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FirmaSingleton: NSObject {
+public class FirmaSingleton: NSObject {
     
-    static let shared = FirmaSingleton(Firma: FirmaEnt.init())
+    public static let shared = FirmaSingleton(Firma: FirmaEnt.init())
     
     var firma: FirmaEnt?
     

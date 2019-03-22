@@ -8,19 +8,19 @@
 
 import UIKit
 
-class FirmarVC: UIViewController {
+public class FirmarVC: UIViewController {
     
-    var cadenaFirmada: String = ""
-    var cadenaOriginal: String = ""
-    var certificadoVerificar: SecCertificate? = nil
-    var privateKeyVerificar: SecKey? = nil
+    public var cadenaFirmada: String = ""
+    public var cadenaOriginal: String = ""
+    public var certificadoVerificar: SecCertificate? = nil
+    public var privateKeyVerificar: SecKey? = nil
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -34,12 +34,12 @@ class FirmarVC: UIViewController {
         self.firmar(cadena: self.cadenaOriginal)
     }
     
-    func firmarCadenaOriginal(cadenaOrigen: String){
+    public func firmarCadenaOriginal(cadenaOrigen: String){
         self.cadenaOriginal = cadenaOrigen
         self.firmar(cadena: self.cadenaOriginal)
     }
     
-    func firmar(cadena:String) {
+    public func firmar(cadena:String) {
         do {
             self.cadenaFirmada = try KriptoManager().firmarCadena(cadena: cadena, keylabel: (FirmaSingleton.shared.firma?.nombreKeyLabel)!)
             print(self.cadenaFirmada)
@@ -51,7 +51,7 @@ class FirmarVC: UIViewController {
         }
     }
     
-    func presentViewController(){
+    public func presentViewController(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "FirmaModal", bundle: nil)
         let viewController: ResultadosVC
         viewController = storyBoard.instantiateViewController(withIdentifier:"ResultadosVC") as! ResultadosVC
@@ -62,7 +62,7 @@ class FirmarVC: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func presentModalViewController(_ StoryboardName: String, ViewControllerNameID: String){
+    public func presentModalViewController(_ StoryboardName: String, ViewControllerNameID: String){
         let storyBoard = UIStoryboard(name: StoryboardName, bundle: nil)
         
         let vc = storyBoard.instantiateViewController(withIdentifier: ViewControllerNameID)
